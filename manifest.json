@@ -18,11 +18,12 @@
         "*://*/*"
       ],
       "js": [
-        "plugins/jquery-3.4.1.min.js"
+        "plugins/js/jquery-3.4.1.min.js"
       ]
     }
   ],
   "browser_action": {
+    "default_icon": "images/get_started48.png",
     "default_popup": "template/home-popup.html"
   }
 }

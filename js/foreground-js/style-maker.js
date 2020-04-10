@@ -1,1 +1,1 @@
-alert("helllo");
+console.log(jQuery().jquery);

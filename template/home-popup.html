@@ -1,7 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <body>
-    <button style="height: 100px;width: 100px;" id="changeColor">ok</button>
-    <script src="../js/foreground-js/style-maker.js"></script>
-  </body>
+
+<head>
+  <title>Set Page Color Popup</title>
+  <link rel="stylesheet" href="../plugins/css/bootstrap.min.css" />
+  <style>
+    .container-main {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      ;
+
+      width: 350px;
+    }
+  </style>
+  <script src="../plugins/js/jquery-3.4.1.min.js"></script>
+  <script src="../plugins/js/bootstrap.min.js"></script>
+  <script src="../js/foreground-js/style-maker.js"></script>
+</head>
+
+<body>
+
+  <div class="container-main container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div>
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#autoLogin" aria-controls="autoLogin" role="tab"
+                data-toggle="tab">Auto Login</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Styling</a>
+            </li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab"
+                data-toggle="tab">Settings</a></li>
+
+          </ul>
+          <br />
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="autoLogin">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Select Email address</label>
+                  <input list="clientEmails" class="form-control" id="exampleInputEmail1" />
+
+                  <datalist id="clientEmails">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                  </datalist>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="profile">
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="settings">
+              <form>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Add New Url Settings</div>
+                  <div class="panel-body">
+                    
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input list="clientEmails" class="form-control" id="exampleInputEmail1" />
+                        <span class="input-group-btn">
+                          <button class="btn btn-success" type="button">Go!</button>
+                        </span>
+                      </div>
+                      <datalist id="clientEmails">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                      </datalist>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Login Api full link : </label>
+                        <input type="text" class="form-control">
+
+                     
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Add/Edit</button>
+                      <button type="reset" class="btn btn-warning">Cancel</button>
+                    </div>
+
+                  </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
 </html>

@@ -8,9 +8,7 @@
     .container-main {
       padding-top: 12px;
       padding-bottom: 12px;
-      ;
-
-      width: 350px;
+      min-width: 300px;
     }
   </style>
   <script src="../plugins/js/jquery-3.4.1.min.js"></script>
@@ -42,19 +40,15 @@
             <div role="tabpanel" class="tab-pane active" id="autoLogin">
               <form>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Select Email address</label>
-                  <input list="clientEmails" class="form-control" id="exampleInputEmail1" />
+                  <label for="resetEmail">Select Email address</label>
+                  <input list="clientEmails" class="form-control input-sm" id="resetEmail" />
 
                   <datalist id="clientEmails">
-                    <option value="Internet Explorer">
-                    <option value="Firefox">
-                    <option value="Chrome">
-                    <option value="Opera">
-                    <option value="Safari">
+                    
                   </datalist>
                 </div>
 
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-sm btn-default" id="resetLogin">Submit</button>
               </form>
             </div>
 
@@ -64,18 +58,18 @@
 
             <div role="tabpanel" class="tab-pane" id="settings">
               <form>
-                <div class="panel panel-default">
+                <div class="panel panel-default panel-sm">
                   <div class="panel-heading">Add New Url Settings</div>
                   <div class="panel-body">
                     
                     <div class="form-group">
-                      <div class="input-group">
+                      <div class="input-group input-group-sm">
                         <input list="clientEmails" class="form-control" id="exampleInputEmail1" />
                         <span class="input-group-btn">
                           <button class="btn btn-success" type="button">Go!</button>
                         </span>
                       </div>
-                      <datalist id="clientEmails">
+                      <datalist id="siteNames">
                         <option value="Internet Explorer">
                         <option value="Firefox">
                         <option value="Chrome">
@@ -85,18 +79,18 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Login Api full link : </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control input-sm">
 
                      
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Auto Save Emails.
+                        <input type="checkbox" class="" > Auto Save Emails.
                       </label>
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Save</button>
-                      <button type="reset" class="btn btn-warning">Cancel</button>
+                      <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                      <button type="reset" class="btn btn-warning btn-sm">Cancel</button>
                     </div>
 
                   </div>

@@ -1,0 +1,16 @@
+[
+    {
+        "siteName":"myWebsite",
+        "siteUrl":"localhost",
+        "siteEmails":["ram@gmail.com","ohm@gmail.com"],
+        "siteLoginResetUrl":"http://localhost/test/?email=",
+        "siteStyleData":"{'temp':'hello'}"
+    },
+    {
+        "siteName":"helloWeb",
+        "siteUrl":"getbootstrap.com",
+        "siteEmails":["jhon@gmail.com","shril@gmail.com"],
+        "siteLoginResetUrl":"http://localhost/test/?email=",
+        "siteStyleData":"{'temp':'hello'}"
+    }
+]

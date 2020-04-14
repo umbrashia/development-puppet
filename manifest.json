@@ -1,10 +1,14 @@
 {
-  "name": "Getting Started ExampleMM",
+  "name": "Puppet Login",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "this extention for development login check with using email id add those email id saved automaticaly in this plugin you can abel to use in future.",
   "manifest_version": 2,
+  "author":"Umbrashia Corporation (shantanu sharma)",
   "permissions": [
-   "declarativeContent", "storage","activeTab","tabs"
+    "declarativeContent",
+    "storage",
+    "activeTab",
+    "tabs"
   ],
   "background": {
     "scripts": [
@@ -22,8 +26,19 @@
       ]
     }
   ],
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
   "browser_action": {
-    "default_icon": "images/get_started48.png",
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    },
     "default_popup": "template/home-popup.html"
   }
 }

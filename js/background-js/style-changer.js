@@ -1,4 +1,4 @@
 // alert('loader');
-chrome.storage.sync.set({ umbrashiaSiteData: null }, function () {
+// chrome.storage.sync.set({ umbrashiaSiteData: null }, function () {
     
-});
+// });

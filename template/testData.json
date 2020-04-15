@@ -12,5 +12,20 @@
         "siteEmails":["jhon@gmail.com","shril@gmail.com"],
         "siteLoginResetUrl":"http://localhost/test/?email=",
         "siteStyleData":"{'temp':'hello'}"
+    },{
+        "background": {
+            "scripts": [],
+            "persistent": false
+          },
+          "content_scripts": [
+            {
+              "matches": [
+                "*://*/*"
+              ],
+              "js": [
+                "plugins/js/jquery-3.4.1.min.js"
+              ]
+            }
+          ]
     }
 ]

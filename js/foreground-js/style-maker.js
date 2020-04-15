@@ -86,15 +86,10 @@ $(document).ready(function () {
         if (allEmils !== "")
             tempSettingData.siteEmails = allEmils.split(",").map(function (ar) { return ar.trim(); });
         var key;
-        for (key in allSettingData) {
-            if (allSettingData.hasOwnProperty(key)) {
-                var element = allSettingData[key];
-                if (element.siteUrl == tempSettingData.siteUrl) {
-                    break;
-                }
-            }
-        }
-        if (allSettingData.length)
+        key = allSettingData.findIndex(function (ar) {
+            return ar.siteUrl === tempSettingData.siteUrl;
+        })
+        if (key !== -1)
             allSettingData.splice(key, 1);
         allSettingData.unshift(tempSettingData);
         var jsonData = JSON.stringify(allSettingData);
@@ -118,20 +113,19 @@ $(document).ready(function () {
             url: tempSettingData.siteLoginResetUrl + browseEmail
         }, function () {
             var key;
-            for (key in allSettingData) {
-                if (allSettingData.hasOwnProperty(key)) {
-                    var element = allSettingData[key];
-                    if (element.siteUrl == tempSettingData.siteUrl) {
-                        if (!tempSettingData.siteEmails.includes(browseEmail))
-                            tempSettingData.siteEmails.push(browseEmail);
-                        break;
-                    }
-                }
-            }
-            if (allSettingData.length)
+            key = allSettingData.findIndex(function (ar) {
+                return ar.siteUrl === tempSettingData.siteUrl;
+            })
+            tempSettingData.siteEmails.push(browseEmail);
+            if (key !== -1) {
                 allSettingData.splice(key, 1);
-            else
-                tempSettingData.siteEmails.push(browseEmail);
+                key = tempSettingData.siteEmails.findIndex(function (ar) {
+                    return ar === browseEmail;
+                })
+                if (key !== -1)
+                    tempSettingData.siteEmails.splice(key, 1);
+
+            }
             allSettingData.unshift(tempSettingData);
             var jsonData = JSON.stringify(allSettingData);
             // alert(jsonData);

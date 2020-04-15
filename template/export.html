@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Set Page Color Popup</title>
+    <link rel="stylesheet" href="../plugins/css/bootstrap.min.css" />
+    <style>
+        .container-main {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            min-width: 300px;
+        }
+    </style>
+    <script src="../plugins/js/jquery-3.4.1.min.js"></script>
+    <script src="../plugins/js/bootstrap.min.js"></script>
+    <script src="../js/foreground-js/options.js"></script>
+</head>
+
+<body>
+
+    <div class="container-main container-fluid">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs " role="tablist">
+                        <li role="presentation" class="active"><a href="#autoLogin" aria-controls="autoLogin" role="tab"
+                                data-toggle="tab">Export Data</a></li>
+                        <li role="presentation"><a href="#editEmail" aria-controls="editEmail" role="tab"
+                                data-toggle="tab">Import Data</a>
+                        </li>
+
+                    </ul>
+                    <br />
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="autoLogin">
+                            <form id="exportSettingForm">
+                                <div class="form-group">
+
+                                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                        <div class="btn-group" role="group">
+                                            <button type="submit" class="btn btn-primary" name="submitType"
+                                                value="do_download">Export</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="editEmail">
+                            <form id="importDataForm">
+                                <div class="form-group">
+                                    <label for="">Select JSON File : </label>
+                                    <input type="file" name="fileinput" id="fileinput" class=" form-control" required/>
+                                </div>
+                                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                    <div class="btn-group" role="group">
+                                        <button type="submit" class="btn btn-primary" name="submitType"
+                                            value="do_new_emails">Import File</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- <div class="box__header" style="  background-color: rgb(189, 189, 189);  padding: 5px; margin-top: 5px;">
+            <x-header style="margin: 0px;">
+              <div class="logo" style="text-align:center ;"><img src="../images/get_started32.png" class="logo-pic"></div>
+            </x-header>
+          </div> -->
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

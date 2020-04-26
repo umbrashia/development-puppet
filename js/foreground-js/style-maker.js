@@ -116,14 +116,14 @@ $(document).ready(function () {
             key = allSettingData.findIndex(function (ar) {
                 return ar.siteUrl === tempSettingData.siteUrl;
             })
-            tempSettingData.siteEmails.push(browseEmail);
+
             if (key !== -1) {
                 allSettingData.splice(key, 1);
                 key = tempSettingData.siteEmails.findIndex(function (ar) {
                     return ar === browseEmail;
                 })
-                if (key !== -1)
-                    tempSettingData.siteEmails.splice(key, 1);
+                if (key == -1)
+                    tempSettingData.siteEmails.push(browseEmail);
 
             }
             allSettingData.unshift(tempSettingData);

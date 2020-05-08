@@ -12,6 +12,8 @@ $(document).ready(function () {
     var globSubmitVal = "";
     var allSettingData = [];
     chrome.tabs.getSelected(null, function (tab) {
+        // console.log(tab.url);
+
         var tempDomainUrl = tab.url.split("//")[1];
         tempDomainUrl = tempDomainUrl.split("/")[0] + '/' + tempDomainUrl.split("/")[1];;
         $("#saveSettingForm").find("[name='newSiteUrl']").val(tempDomainUrl);
@@ -20,7 +22,7 @@ $(document).ready(function () {
         tempSettingData.siteUrl = tempDomainUrl;
         tempSettingData.siteName = tempDomainUrl;
         chrome.storage.sync.get(['umbrashiaSiteData'], function (result) {
-            console.log(result.umbrashiaSiteData);
+            // console.log(result.umbrashiaSiteData);
             // debugger;
             if (result.umbrashiaSiteData) {
                 var data = JSON.parse(result.umbrashiaSiteData);
@@ -106,31 +108,30 @@ $(document).ready(function () {
     function do_reset() {
         var browseEmail = $('#resetEmail').val().toString().trim();;
         tempSettingData.siteLoginResetUrl = $("#saveSettingForm").find("[name='resetLoginUrl']").val();
-
-
-
-        chrome.tabs.update(null, {
-            url: tempSettingData.siteLoginResetUrl + browseEmail
-        }, function () {
-            var key;
-            key = allSettingData.findIndex(function (ar) {
-                return ar.siteUrl === tempSettingData.siteUrl;
-            })
-
-            if (key !== -1) {
-                allSettingData.splice(key, 1);
-                key = tempSettingData.siteEmails.findIndex(function (ar) {
-                    return ar === browseEmail;
+        chrome.tabs.getSelected(null, function (tab) {
+            chrome.tabs.update(null, {
+                url: tempSettingData.siteLoginResetUrl + browseEmail + "&redirectUrl=" + encodeURI(tab.url)
+            }, function () {
+                var key;
+                key = allSettingData.findIndex(function (ar) {
+                    return ar.siteUrl === tempSettingData.siteUrl;
                 })
-                if (key == -1)
-                    tempSettingData.siteEmails.push(browseEmail);
 
-            }
-            allSettingData.unshift(tempSettingData);
-            var jsonData = JSON.stringify(allSettingData);
-            // alert(jsonData);
-            chrome.storage.sync.set({ umbrashiaSiteData: jsonData }, function () {
-                window.close();
+                if (key !== -1) {
+                    allSettingData.splice(key, 1);
+                    key = tempSettingData.siteEmails.findIndex(function (ar) {
+                        return ar === browseEmail;
+                    })
+                    if (key == -1)
+                        tempSettingData.siteEmails.push(browseEmail);
+
+                }
+                allSettingData.unshift(tempSettingData);
+                var jsonData = JSON.stringify(allSettingData);
+                // alert(jsonData);
+                chrome.storage.sync.set({ umbrashiaSiteData: jsonData }, function () {
+                    window.close();
+                });
             });
         });
 

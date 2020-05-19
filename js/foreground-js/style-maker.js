@@ -110,7 +110,7 @@ $(document).ready(function () {
         tempSettingData.siteLoginResetUrl = $("#saveSettingForm").find("[name='resetLoginUrl']").val();
         chrome.tabs.getSelected(null, function (tab) {
             chrome.tabs.update(null, {
-                url: tempSettingData.siteLoginResetUrl + browseEmail + "&redirectUrl=" + encodeURI(tab.url)
+                url: tempSettingData.siteLoginResetUrl + browseEmail + "&redirectUrl=" + encodeURIComponent(tab.url)
             }, function () {
                 var key;
                 key = allSettingData.findIndex(function (ar) {

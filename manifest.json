@@ -1,6 +1,6 @@
 {
   "name": "Puppet Login",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This extention for development login check with using email id and those email id saved automaticaly in this plugin",
   "manifest_version": 2,
   "author":"Umbrashia Corporation (shantanu sharma)",

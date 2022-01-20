@@ -4,6 +4,7 @@
 <head>
   <title>Set Page Color Popup</title>
   <link rel="stylesheet" href="../plugins/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../plugins/css/home-popup.css" />
   <style>
     .container-main {
       padding-top: 12px;
@@ -57,9 +58,12 @@
                 </div>
                 <div class="form-group">
                   <label for="resetEmail">Select Email address :</label>
-                  <input list="clientEmails" class="form-control input-sm" type="email" id="resetEmail" required />
-                  <datalist id="clientEmails">
-                  </datalist>
+                  <div class="autocomplete" style="width:100%;">
+                    <input  class="form-control input-sm" type="email" id="resetEmail" required>
+                  </div>
+                  <!-- <input list="clientEmails" class="form-control input-sm" type="email" id="resetEmail" required />
+                  <datalist id="clientEmails"> 
+                  </datalist> -->
                 </div>
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                   <div class="btn-group" role="group">
